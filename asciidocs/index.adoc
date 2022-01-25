@@ -310,7 +310,7 @@ Enterprise = Firma Konzern
 
 === Java
 
-image::java.jpg[]
+image::java.png[]
 
 IMPORTANT: Selber noch zeichnen
 
@@ -361,7 +361,7 @@ include::plantuml/myActivity.puml[]
 
 ==== V-Model:
 
-image::vmodel.jpg[]
+image::vmodel.png[]
 
 ==== Anwendungsfall
 
@@ -385,7 +385,7 @@ Inkrementell = kleine Schritte
 
 Wie kann man Vererbung verwenden? - Bild von der Tafel und dann selber zeichnen -> Aus 2 Klassen wird ein Objekt
 
-image::vererbungVerwendung.jpg[]
+image::vererbungVerwendung.png[]
 
 include und extends müssen gestrichelt sein
 
