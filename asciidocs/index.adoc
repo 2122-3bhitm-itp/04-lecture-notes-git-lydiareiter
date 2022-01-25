@@ -300,15 +300,11 @@ Donnerstag Plant UML
 
 image:mavenNeu.png[]
 
+=== Java
+
 Archetype = Herleitung von einer Art
 
-SE Standard Edition (normaler User)
-
-Enterprise Edition (Firmen)
-
 Enterprise = Firma Konzern
-
-=== Java
 
 ==== Java ME (Mobile)
 
