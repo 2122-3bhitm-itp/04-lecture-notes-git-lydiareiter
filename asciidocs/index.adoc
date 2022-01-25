@@ -466,3 +466,13 @@ image::disjoint.png[]
 https://www.math-only-math.com/disjoint-of-sets-using-Venn-diagram.html[Seite für die Erklärung]
 
 TIP: Nächstes Mal Aktivitätsdiagramm
+
+== 25. 01. 2022
+
+=== Wiederholung
+
+=== Übung
+
+IMPORTANT: KebabCase verwenden und immer kleinschreiben
+
+Miteinander Repo und projekt
