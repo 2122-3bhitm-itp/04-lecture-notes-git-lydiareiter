@@ -485,3 +485,4 @@ Miteinander Repo und projekt
 
 IMPORTANT: VCS = Version Control System
 
+IMPORTANT: Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Branch arbeiten, dann auseinander arbeiten
