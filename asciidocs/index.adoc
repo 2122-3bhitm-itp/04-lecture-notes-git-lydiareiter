@@ -486,3 +486,15 @@ Miteinander Repo und projekt
 IMPORTANT: VCS = Version Control System
 
 IMPORTANT: Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Branch arbeiten, dann auseinander arbeiten
+
+.Merge Branches zu Main Branch
+----
+  911  git merge feature/student
+  912  git push
+  913  git branch -d feature/student
+  914  git push
+  915  git pull
+  916  git add .
+  917  git commit -m "teacher.java updated"
+  918  git push
+----
