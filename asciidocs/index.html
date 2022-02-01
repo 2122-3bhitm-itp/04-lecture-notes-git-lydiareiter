@@ -1303,6 +1303,31 @@ VCS = Version Control System
 </tr>
 </table>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Branch arbeiten, dann auseinander arbeiten
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Merge Branches zu Main Branch</div>
+<div class="content">
+<pre>  911  git merge feature/student
+  912  git push
+  913  git branch -d feature/student
+  914  git push
+  915  git pull
+  916  git add .
+  917  git commit -m "teacher.java updated"
+  918  git push</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1310,7 +1335,7 @@ VCS = Version Control System
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-02-01 08:08:36 +0100
+Last updated 2022-02-01 08:50:36 +0100
 </div>
 </div>
 </body>
