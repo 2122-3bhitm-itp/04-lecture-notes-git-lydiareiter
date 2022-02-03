@@ -488,6 +488,7 @@ IMPORTANT: VCS = Version Control System
 IMPORTANT: Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Branch arbeiten, dann auseinander arbeiten
 
 .Merge Branches zu Main Branch
+[source, bash]
 ----
   911  git merge feature/student
   912  git push
@@ -497,4 +498,31 @@ IMPORTANT: Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Br
   916  git add .
   917  git commit -m "teacher.java updated"
   918  git push
+----
+
+== 03.02.2022
+
+TIP: Softwareentwicklung soll langweilig sein (für Stabilität)
+
+TIP: Stick to the standard
+
+IMPORTANT: Nie ITP-Dateien in Windows öffnen
+
+=== Anwendungsfall-Diagramm
+
+IMPORTANT: Es geht um das Ergebnis eines Projekts
+
+Bsp.: Ich kaufe ein Auto für die Scheibenwischer, aber zum Beispiel der Transport von Güter und Personen.
+
+IMPORTANT: Man soll keine Pfeile zeichnen sonst falsch nur den Strich
+
+IMPORTANT: Der Ramen ist der Systemrahmen alles innerhalb ist programmieren außerhalb was wir nicht machen
+
+=== Tennisplatz Hausübung
+
+[plantuml, tennis]
+----
+@startuml
+include::plantuml/tennisplatz.puml[]
+@enduml
 ----
