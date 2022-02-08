@@ -569,14 +569,13 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public String getAnrede() {
-        return anrede;
-    }
+    public String getAnrede() {return anrede;}
 
-    public void setAnrede(String anrede) {
-        this.anrede = anrede;
-    }
+    public void setAnrede(String anrede) {this.anrede = anrede;}
+
+    public abstract String greeting();
 }
+
 
 public class Teacher extends Person {
     static int teacherNumber = 0;
