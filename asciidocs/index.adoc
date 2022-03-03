@@ -612,3 +612,84 @@ public class Student extends Person{
 }
 
 ----
+
+== 01.03.2022
+
+== 03.03.2022
+
+https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/create-oravm.html
+
+".shh/config" -> Aufbau beschreiben
+
+LTS = Long Terms Support
+
+IMPORTANT: Filezilla lernen
+
+IMPORTANT: Überlichtloch Coden und auch im Terminal übersichtlich
+
+https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/create-oravm.html
+7-8
+
+[source,bash]
+----
+cd /opt
+cd /docker
+cd /nginx
+Skript
+----
+
+Vorbereiten des Opt Verzeichnis -> Thomas Lecture Notes
+
+[source, bash]
+----
+mkdir docker
+cd docker
+mkdir nginx
+cd nginx
+----
+
+IMPORTANT: Nur offizielle Image verwenden
+
+=== Was ist ein Docker Image
+
+Kann man sich vorstellen wie eine ISO Image
+
+Unveränderliche Vorlage
+
+Ist ein großes File
+
+Container = Prozess
+
+Post danach
+
+Pre davor
+
+[source,bash]
+----
+chmod +x start-nginx.sh
+./start-nginx.sh
+docker image ls
+docker container ls
+docker container stop my-nginx
+docker container ls -a
+docker container start my-nginx
+sudo apt install lynx
+docker kill b7b
+docker container ls -a
+docker container rm b7b
+docker container ls -a
+sudo apt install tree
+tree
+curl localhost_80
+docker exec -it my-nginx /bin/bash
+----
+
+Lynx -> Browser
+
+https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/gh-actions.html#_commit_push_and_run_the_script_2
+
+https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/gh-actions.html#_create_an_ingress_rule_for_accessing_your_endpoint
+
+NOTE: sudo !! letzten Befehl als sudo ausführen
+
+docker run --name my-nginx -v ${PWD}/html:/usr/share/nginx/html -p 8080:80 --rm -d nginx:1.21.6
