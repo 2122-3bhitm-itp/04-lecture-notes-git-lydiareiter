@@ -693,3 +693,14 @@ https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/gh-actions.ht
 NOTE: sudo !! letzten Befehl als sudo ausführen
 
 docker run --name my-nginx -v ${PWD}/html:/usr/share/nginx/html -p 8080:80 --rm -d nginx:1.21.6
+
+== 08.03.2022
+
+image::volume.png[]
+
+.Docker Start Comand
+
+[source, bash]
+----
+docker run -e POSTGRES_PASSWORD=password --name my-database  -p 5432:5432 -v database-volume:/var/lib/postgresql/data  my-database
+----

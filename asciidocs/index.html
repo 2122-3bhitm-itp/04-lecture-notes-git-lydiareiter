@@ -519,6 +519,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_was_ist_ein_docker_image">14.1. Was ist ein Docker Image</a></li>
 </ul>
 </li>
+<li><a href="#_08_03_2022">15. 08.03.2022</a></li>
 </ul>
 </div>
 </div>
@@ -1667,11 +1668,27 @@ sudo !! letzten Befehl als sudo ausführen
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_08_03_2022">15. 08.03.2022</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="images/volume.png" alt="volume">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Docker Start Comand</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">docker run -e POSTGRES_PASSWORD=password --name my-database  -p 5432:5432 -v database-volume:/var/lib/postgresql/data  my-database</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-03-03 11:42:28 +0100
+Last updated 2022-03-08 08:53:35 +0100
 </div>
 </div>
 </body>
