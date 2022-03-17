@@ -704,3 +704,25 @@ image::volume.png[]
 ----
 docker run -e POSTGRES_PASSWORD=password --name my-database  -p 5432:5432 -v database-volume:/var/lib/postgresql/data  my-database
 ----
+
+== 17.03.2022
+
+Projekte besprechen
+
+auto de takten = automatisches Lernen
+
+//TODO: auto de takten noch näher erklären
+
+Domain Objekt Model != Programmieren Klassendiagramm (von Sew)
+
+Nicht an technischen Klassen denken, sondern Was man machen möchte und nicht wie
+
+Erklärung von Stütz asdoc übernehmen und noch mehr ausarbeiten
+
+ERD = Objekt Beziehung Diagramm
+
+ S . 236 - 239, 243, 245-248
+
+Sysback -> aufschreiben und lernen
+
+Minutes of meeting = Meeting Protokoll
