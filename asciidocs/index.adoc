@@ -726,3 +726,11 @@ ERD = Objekt Beziehung Diagramm
 Sysback -> aufschreiben und lernen
 
 Minutes of meeting = Meeting Protokoll
+
+== 22.03.2022
+
+== 24.03.2022
+
+https://github.com/2122-3bhitm-itp/02-project-inventory
+
+-> alles was wir die Stunde machen
