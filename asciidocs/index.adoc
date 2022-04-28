@@ -791,3 +791,111 @@ TIP: Sprechende Variablen
 
 === Cloud Computing
 
+== 28.04.2022
+
+* Klasse Bauplan
+* Objekt gespeichert Heap
+* Zustand was in Objekt ist
+
+IMPORTANT: Musterlösung in der Klasse besprechen
+
+IMPORTANT: Bleistift und Radiergummi immer mithaben
+
+=== Musterlösung Test
+
+==== Klassendiagramm
+
+[plantuml, chaterfluggesellschaft]
+----
+@startuml
+left to right direction
+
+class Flugplan {
+    -flugNo: String
+    -flugDatum: LocalDate
+    -flughafen: Flughafen
+    -flugzeug: Flugzeug
+
+}
+
+class Flughafen {
+    -bezeichnung: String
+    -land: String
+}
+
+class Flugzeug {
+    -typ: String
+    -hersteller: String
+    -kapitaet: integer
+}
+
+class Reiseveranstalter {
+
+}
+
+class Kontingent {
+    -anzahlSitze: integer
+    -provision: double
+}
+
+class Mitarbeiter {
+    -firstName: String
+    -lastName: String
+}
+
+class Buchung {
+    -anzahlSitze: integer
+    -preisProSitz: BigDecimal
+}
+
+Kontingent "*" -left- "*" Flugplan
+(Kontingent, Flugplan) .. Buchung
+Flugzeug "1" <-- "*" Flugplan
+Flugplan "*" --> "1" Flughafen
+Kontingent "*" --> "1" Reiseveranstalter
+Mitarbeiter <-- Kontingent: verkauft >
+
+@enduml
+----
+
+IMPORTANT: Struktur ist wichtig
+
+==== Kurzfragen
+
+a) Bind mount
+
+b) .gitignore hineinschreiben db/
+
+c) einen Commit von einem Branch zu einem anderen bringen (Cherry Picking)
+
+d) Asciidoctor Programm ausführen und dann File als Parameter mitgeben
+
+e) Inhaltes Ziel, zeitliches Ziel, Projektrisiko, ...
+
+IMPORTANT: Keine Märchen schreiben
+
+
+=== Vorgehensmodell
+
+==== Wasserfallmodell
+
+image::wasserfallmodell.png[]
+
+- Agile Prozessmodelle
+
+==== V-Modell
+
+image::vmodell.png[]
+
+==== Scrum
+
+- Schnell auf dem Markt
+- Pizza-Regel: Teams sollen klein bleiben (so klein, dass alle von 2 Pizza essen könne)
+- Leute und Umgänge sind wichtig
+- funktionierende Software > Umfangreiche Dokumentation
+- reagieren auf Veränderungen
+- User-Stories
+
+Rolle: Zusammenfassung von Rechte
+
+image::rolesoracle.png[]
