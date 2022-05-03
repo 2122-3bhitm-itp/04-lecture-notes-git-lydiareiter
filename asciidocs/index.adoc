@@ -963,3 +963,29 @@ quarkus.package.type=uber-jar
 ./mvnw clean package
 docker build .
 ----
+
+== Lernen für den Test
+
+image::6-bibliothek.png[]
+
+[plantuml, cld-bibliothek]
+----
+@startuml
+left to right direction
+
+Mitarbeiter "*" -- "*" Kunde
+(Mitarbeiter, Kunde) .. Bestellung
+Kunde -- Buch
+Kunde -- Zeitschrift
+Buch -- Verlag
+Regal --- Sachgebiet
+Zeitschrift -- Regal
+Buch -- Autor
+Artikel -- Autor
+Buch -- Sachgebiet
+Zeitschrift -- Artikel
+Buch -- Buch
+Artikel -- Artikel
+
+@enduml
+----
