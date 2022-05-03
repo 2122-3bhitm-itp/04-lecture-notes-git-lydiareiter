@@ -899,3 +899,67 @@ image::vmodell.png[]
 Rolle: Zusammenfassung von Rechte
 
 image::rolesoracle.png[]
+
+== 03.05.2022
+
+[source, bash]
+-----
+
+mkdir docker-java-tutorial
+cd docker-java-tutorial/
+mkdir app
+cd app
+nano Dockerfile
+
+-----
+
+[source, Dockerfile]
+-----
+
+FROM eclipse-temurin:17
+RUN mkdir /opt/app
+COPY japp.jar /opt/app
+CMD ["java", "-jar", "/opt/app/japp.jar"]
+
+-----
+
+Quarkus Projekt erstellen
+
+.Main Class
+[source, java]
+-----
+package at.htl;
+
+import io.quarkus.runtime.Quarkus;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
+@QuarkusMain
+
+public class TheMain {
+    public static void main(String[] args) {
+        Quarkus.run(args);
+    }
+}
+-----
+
+.application.properties
+[source, qute]
+-----
+quarkus.package.type=uber-jar
+-----
+
+.dockerignore
+[source, docker]
+----
+#*
+#!target/*-runner
+#!target/*-runner.jar
+!target/lib/*
+!target/quarkus-app/*
+----
+
+[source, bash]
+----
+./mvnw clean package
+docker build .
+----
