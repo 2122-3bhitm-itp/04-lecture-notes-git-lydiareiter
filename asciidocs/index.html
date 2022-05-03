@@ -541,6 +541,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_vorgehensmodell">21.2. Vorgehensmodell</a></li>
 </ul>
 </li>
+<li><a href="#_03_05_2022">22. 03.05.2022</a></li>
 </ul>
 </div>
 </div>
@@ -2054,11 +2055,75 @@ Keine Märchen schreiben
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_03_05_2022">22. 03.05.2022</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">mkdir docker-java-tutorial
+cd docker-java-tutorial/
+mkdir app
+cd app
+nano Dockerfile</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM eclipse-temurin:17
+RUN mkdir /opt/app
+COPY japp.jar /opt/app
+CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/opt/app/japp.jar&quot;]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Quarkus Projekt erstellen</p>
+</div>
+<div class="listingblock">
+<div class="title">Main Class</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">at.htl</span>;
+
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.quarkus.runtime.Quarkus</span>;
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.quarkus.runtime.annotations.QuarkusMain</span>;
+
+<span style="color:#007">@QuarkusMain</span>
+
+<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">TheMain</span> {
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">void</span> main(<span style="color:#0a8;font-weight:bold">String</span><span style="color:#339;font-weight:bold">[]</span> args) {
+        Quarkus.run(args);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">application.properties</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="qute">quarkus.package.type=uber-jar</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">dockerignore</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="docker">#*
+#!target/*-runner
+#!target/*-runner.jar
+!target/lib/*
+!target/quarkus-app/*</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">./mvnw clean package
+docker build .</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-04-28 11:33:30 +0200
+Last updated 2022-05-03 08:59:57 +0200
 </div>
 </div>
 </body>
