@@ -989,3 +989,55 @@ Artikel -- Artikel
 
 @enduml
 ----
+
+== 05.05.2022
+
+=== Test Lösung
+
+==== Cld
+
+[plantuml, cld-rechnungen-test]
+-----
+@startuml
+left to right direction
+
+class Product{
+    name
+    einheit
+    unitStock
+}
+class Invoice{
+    InvoiceDate
+    costumer
+    employee
+    total --Gesamtpreis nach Abzug nach Gesamtrabatt
+}
+class InvoiceItem{
+    product
+    priceperUnit
+    amount
+}
+class Costumer{}
+class Employer{}
+
+Costumer "1" -- "*" Invoice
+Invoice "*" -- "*" Product
+(Invoice, Product) .. InvoiceItem
+Invoice -- Employer
+Product -- enumUnit
+
+@enduml
+-----
+
+IMPORTANT: Das was erklärt wird, muss man wissen
+
+IMPORTANT: Begriffe lernen
+
+TIP: Wegen Preiserhöhungen braucht man 2 Preise
+
+IMPORTANT: Klassifizieren, zu einer Klasse zusammenfassen - mit einem Begriff zusammenfassen
+
+image::testwh052022.png[]
+
+image::northwind-db-shema.png[]
+.Leichteste Beispiel (https://arrow-of-time.com/comm_testdata.aspx)
