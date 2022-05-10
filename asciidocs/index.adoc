@@ -1039,6 +1039,12 @@ IMPORTANT: Klassifizieren, zu einer Klasse zusammenfassen - mit einem Begriff zu
 
 image::testwh052022.png[]
 
-image::northwind-db-shema.png[]
 .Leichteste Beispiel (https://arrow-of-time.com/comm_testdata.aspx)
+image::northwind-db-shema.png[]
 
+== 10.05.2022
+
+[source, bash]
+----
+docker rmi $(docker images -a -q)
+----
