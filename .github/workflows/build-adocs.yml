@@ -15,4 +15,4 @@ jobs:
       id: adocbuild
       uses: avattathil/asciidoctor-action@master
       with:
-          program: "asciidoctor -D asciidocs --backend=html5 -o index.html index.adoc
+          program: "asciidoctor -D asciidocs --backend=html5 -o index.html index.adoc"
