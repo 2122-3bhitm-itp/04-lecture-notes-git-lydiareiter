@@ -1048,3 +1048,30 @@ image::northwind-db-shema.png[]
 ----
 docker rmi $(docker images -a -q)
 ----
+
+== Übung 
+
+[source, Dockerfile]
+-----
+FROM ubuntu
+
+RUN echo hello 3bhitm >> test.txt
+-----
+
+[source, bash]
+-----
+build -t my-ubunto .
+-----
+
+[source, Dockerfile]
+-----
+FROM my-ubunto
+
+RUN cat test.txt
+-----
+
+
+[source, bash]
+-----
+build -t cat .
+-----
