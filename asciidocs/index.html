@@ -549,6 +549,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_10_05_2022">25. 10.05.2022</a></li>
+<li><a href="#_übung_2">26. Übung</a></li>
+<li><a href="#_12_05_2022">27. 12.05.2022</a></li>
 </ul>
 </div>
 </div>
@@ -2226,11 +2228,81 @@ Klassifizieren, zu einer Klasse zusammenfassen - mit einem Begriff zusammenfasse
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_übung_2">26. Übung</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM ubuntu
+
+RUN echo hello 3bhitm &gt;&gt; test.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">docker build -t my-ubunto .</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM my-ubunto
+
+RUN cat test.txt</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">docker build -t cat .</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_12_05_2022">27. 12.05.2022</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spezifikation = Genaue Technische Beschreibung</p>
+</div>
+<div class="paragraph">
+<p>vürokratisches System = Abeitlungsleiter - Gruppenleiuter -&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>bürokratische Prozesse = von oben nach untern von bürokratischen System</p>
+</div>
+<div class="paragraph">
+<p>wöhlfülen ist wichtiger als das bürokratisches System</p>
+</div>
+<div class="paragraph">
+<p>Funktionierende Sogtware ist wichtiger als komplette Doku</p>
+</div>
+<div class="paragraph">
+<p>Produkt Backlog ist wie Pflichtenheft</p>
+</div>
+<div class="paragraph">
+<p>Sprit Backlog &#8594; sind mehrere User Stories</p>
+</div>
+<div class="paragraph">
+<p>User Story &#8594; Als irgendwer möchte ich etwas, so dass ich bla bla bla</p>
+</div>
+<div class="paragraph">
+<p>Rollen Scrum &#8594; Scrum Master (Stütz) Stackholder (Betroffene)</p>
+</div>
+<div class="paragraph">
+<p>Scheingenauigkeit ist nicht gut</p>
+</div>
+<div class="paragraph">
+<p>usage &#8594; &#8230;&#8203; new Class</p>
+</div>
+<div class="paragraph">
+<p>usage != Assotiation</p>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-05-10 08:17:44 +0200
+Last updated 2022-05-12 11:21:48 +0200
 </div>
 </div>
 </body>
