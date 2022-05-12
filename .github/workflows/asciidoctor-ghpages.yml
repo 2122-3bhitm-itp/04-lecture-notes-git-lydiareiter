@@ -1,13 +1,11 @@
 name: asciidoctor-ghpages
 
-
-
 on:
   push:
     branches:
       - 'main'
     paths:
-      - docs/**
+      - asciidocs/**
 
 jobs:
   build:
@@ -20,6 +18,11 @@ jobs:
       BRANCH: gh-pages
     steps:
       - uses: actions/checkout@v2
+      - name: script
+        run: PATH/script.sh
+        shell: bash
+        with:
+          password: ${{ secrets.ACCESS_TOKEN }}
       - name: Build
         uses: quirinecker/asciidoctor-convert-action@main
         with:

@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.16">
 <meta name="author" content="Lydia Reiter">
+<link rel="icon" type="image/png" href="themes/favicon.png">
 <title>Mitschrift ITP</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -194,8 +195,7 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 details{margin-left:1.25rem}
-details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
-details>summary::-webkit-details-marker{display:none}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
 details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
 details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
 details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
@@ -237,8 +237,9 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
@@ -275,7 +276,7 @@ table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-c
 table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
 table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
 table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
-table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -291,11 +292,10 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
-li>p:empty:only-child::before{content:"";display:inline-block}
 ul.checklist>li>p:first-child{margin-left:-1em}
 ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
@@ -338,6 +338,8 @@ sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -437,6 +439,229 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
+<style>
+pre.rouge .hll {
+  background-color: #ffc;
+}
+pre.rouge .hll * {
+  background-color: initial;
+}
+</style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -556,14 +781,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_14_12_2021">1. 14.12.2021</h2>
+<h2 id="_14_12_2021"><a class="anchor" href="#_14_12_2021"></a>1. 14.12.2021</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In dieser Stunde haben wir uns mit SSH Keys uns bei GitHub angemeldet. Dazu haben wir uns einen SSH-Key generieren lassen.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">ssh-keygen -t rsa -b 4096</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -581,7 +806,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Danach haben wir eine gemeinsame Übung begonnen. Wir sind in zweier Teams zusammen gegangen und einer von den beiden hat ein Repository erstellt. Derjenige, der dies erstellt hat, musst noch die andere Person zu dem Repository hinzufügen.</p>
 </div>
 <div class="sect2">
-<h3 id="_schritt_1">1.1. Schritt 1:</h3>
+<h3 id="_schritt_1"><a class="anchor" href="#_schritt_1"></a>1.1. Schritt 1:</h3>
 <div class="paragraph">
 <p>Gehen Sie zu den Repository Einstellungen.</p>
 </div>
@@ -592,7 +817,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_2">1.2. Schritt 2:</h3>
+<h3 id="_schritt_2"><a class="anchor" href="#_schritt_2"></a>1.2. Schritt 2:</h3>
 <div class="paragraph">
 <p>Klicken Sie bitte auf Manage access</p>
 </div>
@@ -603,7 +828,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_3">1.3. Schritt 3:</h3>
+<h3 id="_schritt_3"><a class="anchor" href="#_schritt_3"></a>1.3. Schritt 3:</h3>
 <div class="paragraph">
 <p>Drücken Sie auf die Buttons Add people (für einzelne Personen hinzufügen), Add teams (für ein bestehendes Team hinzufügen) oder Create team (für ein neues Team erstellen).</p>
 </div>
@@ -617,59 +842,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_verwendete_befehle">1.4. Verwendete Befehle:</h3>
+<h3 id="_verwendete_befehle"><a class="anchor" href="#_verwendete_befehle"></a>1.4. Verwendete Befehle:</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">733  echo &quot;# 3BHITM-github-Branch&quot; &gt;&gt; README.md
+<pre class="rouge highlight"><code data-lang="shell">733  <span class="nb">echo</span> <span class="s2">"# 3BHITM-github-Branch"</span> <span class="o">&gt;&gt;</span> README.md
 
 734  git init
 
 735  git add README.md
 
-736  git commit -m &quot;first commit&quot;
+736  git commit <span class="nt">-m</span> <span class="s2">"first commit"</span>
 
-737  git branch -M main
+737  git branch <span class="nt">-M</span> main
 
 738  git remote add origin https://github.com/lydiareiter/3BHITM-github-Branch.git
 
-739  git push -u origin main
+739  git push <span class="nt">-u</span> origin main
 
 740  git push origin main
 
-741  cd
-742  cd ~/.ssh
+741  <span class="nb">cd
+</span>742  <span class="nb">cd</span> ~/.ssh
 743  la
-744  cd
-745  ssh-keygen -t rsa
-746  cd /.ssh
+744  <span class="nb">cd
+</span>745  ssh-keygen <span class="nt">-t</span> rsa
+746  <span class="nb">cd</span> /.ssh
 747  la
-748  cd .ssh/
+748  <span class="nb">cd</span> .ssh/
 749  la
 750  ll
 751  gedit id_rsa.pub
-752  cd
-753  cd ITP/
+752  <span class="nb">cd
+</span>753  <span class="nb">cd </span>ITP/
 754  git clone https://github.com/lydiareiter/3BHITM-github-Branch.git
 755  ll
-756  cd 3BHITM-github-Branch/
-757  echo &quot;# 3BHITM-github-Branch&quot; &gt;&gt; README.md
+756  <span class="nb">cd </span>3BHITM-github-Branch/
+757  <span class="nb">echo</span> <span class="s2">"# 3BHITM-github-Branch"</span> <span class="o">&gt;&gt;</span> README.md
 758  git add README.md
-759  git branch -M main
-760  git push -u origin main
-761  git commit -m &quot;first commit&quot;
+759  git branch <span class="nt">-M</span> main
+760  git push <span class="nt">-u</span> origin main
+761  git commit <span class="nt">-m</span> <span class="s2">"first commit"</span>
 762  git push origin main
 763  ssh git@github.com:lydiareiter/3BHITM-github-Branch.git
-764  cd ..
-765  mkdir playground
+764  <span class="nb">cd</span> ..
+765  <span class="nb">mkdir </span>playground
 766  ssh git@github.com:lydiareiter/3BHITM-github-Branch.git
 767  git clone git@github.com:lydiareiter/3BHITM-github-Branch.git
 768  ll
-769  cd playground/
+769  <span class="nb">cd </span>playground/
 770  git clone git@github.com:lydiareiter/3BHITM-github-Branch.git
 771  git clone https://github.com/lydiareiter/3BHITM-github-Branch.git
 772  git clone https://github.com/EderMoritz/3bhitm-labs-eder.git
 
-773  cd 3bhitm-labs-eder/
+773  <span class="nb">cd </span>3bhitm-labs-eder/
 
 774  gedit README.md
 
@@ -677,29 +902,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 776  gedit README.md
 
-777  git add .
+777  git add <span class="nb">.</span>
 
-778  git commit -m &quot;change read.me&quot;
+778  git commit <span class="nt">-m</span> <span class="s2">"change read.me"</span>
 
 779  git push
 
-780  cd ..
+780  <span class="nb">cd</span> ..
 
-781  rm 3bhitm-labs-eder/
+781  <span class="nb">rm </span>3bhitm-labs-eder/
 
 782  ll
 
 783  git clone git@github.com:EderMoritz/3bhitm-labs-eder.git
 
-784  cd 3bhitm-labs-eder/
+784  <span class="nb">cd </span>3bhitm-labs-eder/
 
 785  ll
 
 786  nano README.md
 
-787  git add .
+787  git add <span class="nb">.</span>
 
-788  git commit -m &quot;changed README.md&quot;
+788  git commit <span class="nt">-m</span> <span class="s2">"changed README.md"</span>
 
 789  git push</code></pre>
 </div>
@@ -708,7 +933,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_16_12_2021">2. 16.12.2021</h2>
+<h2 id="_16_12_2021"><a class="anchor" href="#_16_12_2021"></a>2. 16.12.2021</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Diese Stunde haben wir mit Oracle Cloud angefangen und gleich eine Instanz angelegt. Wir dürfen ohne Kosten maximal zwei Instanzen anlegen und laufen lassen.</p>
@@ -717,7 +942,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Schritt-für-Schritt-Anleitung für Instanzen anlegen:</p>
 </div>
 <div class="sect2">
-<h3 id="_schritt_1_2">2.1. Schritt 1:</h3>
+<h3 id="_schritt_1_2"><a class="anchor" href="#_schritt_1_2"></a>2.1. Schritt 1:</h3>
 <div class="paragraph">
 <p>Gehen Sie auf Get Started.</p>
 </div>
@@ -728,7 +953,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_2_2">2.2. Schritt 2:</h3>
+<h3 id="_schritt_2_2"><a class="anchor" href="#_schritt_2_2"></a>2.2. Schritt 2:</h3>
 <div class="paragraph">
 <p>Scrollen sie bis zu Launch Resources und drücken auf Create a VM instance.</p>
 </div>
@@ -739,7 +964,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_3_2">2.3. Schritt 3:</h3>
+<h3 id="_schritt_3_2"><a class="anchor" href="#_schritt_3_2"></a>2.3. Schritt 3:</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/createSettings.png" alt="createSettings">
@@ -750,7 +975,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_4">2.4. Schritt 4:</h3>
+<h3 id="_schritt_4"><a class="anchor" href="#_schritt_4"></a>2.4. Schritt 4:</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/imageShape.png" alt="imageShape">
@@ -766,7 +991,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_5">2.5. Schritt 5:</h3>
+<h3 id="_schritt_5"><a class="anchor" href="#_schritt_5"></a>2.5. Schritt 5:</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/sshKeyVM.png" alt="sshKeyVM">
@@ -777,7 +1002,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_schritt_6">2.6. Schritt 6:</h3>
+<h3 id="_schritt_6"><a class="anchor" href="#_schritt_6"></a>2.6. Schritt 6:</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/checks.png" alt="checks">
@@ -799,78 +1024,78 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">sudo apt update
-sudo apt install nginx</code></pre>
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>nginx</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_21_12_2021">3. 21.12.2021</h2>
+<h2 id="_21_12_2021"><a class="anchor" href="#_21_12_2021"></a>3. 21.12.2021</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Diese Stunde haben wir die Übung mit einem anderen Schüler weiter gearbeitet. Wir haben abwechselt wieder die README.md geändert und haben es direkt nacheinander versucht ohne dazwischen zu pullen. Danach hat uns der Herr Professor erklärt wie wir dieses Problem lösen können.</p>
 </div>
 <div class="sect2">
-<h3 id="_verwendete_befehle_2">3.1. Verwendete Befehle:</h3>
+<h3 id="_verwendete_befehle_2"><a class="anchor" href="#_verwendete_befehle_2"></a>3.1. Verwendete Befehle:</h3>
 <div class="sect3">
-<h4 id="_lydia">3.1.1. Lydia:</h4>
+<h4 id="_lydia"><a class="anchor" href="#_lydia"></a>3.1.1. Lydia:</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">775  cd 3bhitm-labs-eder/
+<pre class="rouge highlight"><code data-lang="shell">775  <span class="nb">cd </span>3bhitm-labs-eder/
   776  gedit README.md
   777  git pull
   778  gedit README.md
-  779  git add .
-  780  git commit -m &quot;change read.me&quot;
+  779  git add <span class="nb">.</span>
+  780  git commit <span class="nt">-m</span> <span class="s2">"change read.me"</span>
   781  git push
-  782  cd ..
-  783  rm 3bhitm-labs-eder/
+  782  <span class="nb">cd</span> ..
+  783  <span class="nb">rm </span>3bhitm-labs-eder/
   784  ll
   785  git clone git@github.com:EderMoritz/3bhitm-labs-eder.git
-  786  cd 3bhitm-labs-eder/
+  786  <span class="nb">cd </span>3bhitm-labs-eder/
   787  ll
   788  nano README.md
-  789  git add .
-  790  git commit -m &quot;changed README.md&quot;
+  789  git add <span class="nb">.</span>
+  790  git commit <span class="nt">-m</span> <span class="s2">"changed README.md"</span>
   791  git push
-  792  history
-  793  git add .
-  795  git commit -m &quot;updated by Lydia&quot;
+  792  <span class="nb">history
+  </span>793  git add <span class="nb">.</span>
+  795  git commit <span class="nt">-m</span> <span class="s2">"updated by Lydia"</span>
   796  git push</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_moritz">3.1.2. Moritz</h4>
+<h4 id="_moritz"><a class="anchor" href="#_moritz"></a>3.1.2. Moritz</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">cd ~
-cd /home/&lt;username&gt;
-ls
-ls .ssh
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">cd</span> ~
+<span class="nb">cd</span> /home/&lt;username&gt;
+<span class="nb">ls
+ls</span> .ssh
 code id_rsa
 code .ssh
-cd ..
-rm -rf 3bhitm-labs-eder/
-mkdir work
-cd work/
+<span class="nb">cd</span> ..
+<span class="nb">rm</span> <span class="nt">-rf</span> 3bhitm-labs-eder/
+<span class="nb">mkdir </span>work
+<span class="nb">cd </span>work/
 git clone git@github.com:EderMoritz/3bhitm-labs-eder.git
-cd 3bhitm-labs-eder/
-ls
-gedit README.md
+<span class="nb">cd </span>3bhitm-labs-eder/
+<span class="nb">ls
+</span>gedit README.md
 git status
 git add README.md
 git status
-git commit -m &quot;test merge&quot;
+git commit <span class="nt">-m</span> <span class="s2">"test merge"</span>
 git status
 git push
 git pull
-git config pull.rebase false
-gedit README.md
-git add .
-git commit -m &quot;update README&quot;
+git config pull.rebase <span class="nb">false
+</span>gedit README.md
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"update README"</span>
 git push
 git pull</code></pre>
 </div>
@@ -880,10 +1105,10 @@ git pull</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_23_12_2021">4. 23.12.2021</h2>
+<h2 id="_23_12_2021"><a class="anchor" href="#_23_12_2021"></a>4. 23.12.2021</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_git_merge_in_intellij">4.1. Git Merge in Intellij</h3>
+<h3 id="_git_merge_in_intellij"><a class="anchor" href="#_git_merge_in_intellij"></a>4.1. Git Merge in Intellij</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/gitIntellij.png" alt="gitIntellij">
@@ -893,10 +1118,10 @@ git pull</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_11_01_2022">5. 11.01.2022</h2>
+<h2 id="_11_01_2022"><a class="anchor" href="#_11_01_2022"></a>5. 11.01.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_git_merge_konflikt">5.1. Git Merge Konflikt</h3>
+<h3 id="_git_merge_konflikt"><a class="anchor" href="#_git_merge_konflikt"></a>5.1. Git Merge Konflikt</h3>
 <div class="paragraph">
 <p><span class="image"><img src="images/merge.png" alt="merge"></span></p>
 </div>
@@ -935,12 +1160,12 @@ git pull</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_13_01_2022">6. 13.01.2022</h2>
+<h2 id="_13_01_2022"><a class="anchor" href="#_13_01_2022"></a>6. 13.01.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_maven">6.1. Maven</h3>
+<h3 id="_maven"><a class="anchor" href="#_maven"></a>6.1. Maven</h3>
 <div class="sect3">
-<h4 id="_projekt_anlegen">6.1.1. Projekt Anlegen</h4>
+<h4 id="_projekt_anlegen"><a class="anchor" href="#_projekt_anlegen"></a>6.1.1. Projekt Anlegen</h4>
 <div class="paragraph">
 <p><span class="image"><img src="images/mavenNeu.png" alt="mavenNeu"></span></p>
 </div>
@@ -959,7 +1184,7 @@ git pull</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_java">6.2. Java</h3>
+<h3 id="_java"><a class="anchor" href="#_java"></a>6.2. Java</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/java.png" alt="java">
@@ -998,9 +1223,9 @@ Selber noch zeichnen
 </div>
 </div>
 <div class="sect2">
-<h3 id="_plant_uml">6.3. Plant UML</h3>
+<h3 id="_plant_uml"><a class="anchor" href="#_plant_uml"></a>6.3. Plant UML</h3>
 <div class="sect3">
-<h4 id="_uml_als">6.3.1. UML als</h4>
+<h4 id="_uml_als"><a class="anchor" href="#_uml_als"></a>6.3.1. UML als</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/city.png" alt="city" width="118" height="93">
@@ -1032,16 +1257,16 @@ Selber noch zeichnen
 </div>
 </div>
 <div class="sect1">
-<h2 id="_20_01_2022">7. 20.01.2022</h2>
+<h2 id="_20_01_2022"><a class="anchor" href="#_20_01_2022"></a>7. 20.01.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_uml_diagramm_klassendiagramm">7.1. UML Diagramm (Klassendiagramm)</h3>
+<h3 id="_uml_diagramm_klassendiagramm"><a class="anchor" href="#_uml_diagramm_klassendiagramm"></a>7.1. UML Diagramm (Klassendiagramm)</h3>
 <div class="sect3">
-<h4 id="_präsentation_kapitel_3_2_anwendungsfalldiag">7.1.1. Präsentation (kapitel 3 2 Anwendungsfalldiag)</h4>
+<h4 id="_präsentation_kapitel_3_2_anwendungsfalldiag"><a class="anchor" href="#_präsentation_kapitel_3_2_anwendungsfalldiag"></a>7.1.1. Präsentation (kapitel 3 2 Anwendungsfalldiag)</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_v_model">7.1.2. V-Model:</h4>
+<h4 id="_v_model"><a class="anchor" href="#_v_model"></a>7.1.2. V-Model:</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/vmodel.png" alt="vmodel">
@@ -1049,7 +1274,7 @@ Selber noch zeichnen
 </div>
 </div>
 <div class="sect3">
-<h4 id="_anwendungsfall">7.1.3. Anwendungsfall</h4>
+<h4 id="_anwendungsfall"><a class="anchor" href="#_anwendungsfall"></a>7.1.3. Anwendungsfall</h4>
 <div class="paragraph">
 <p><span class="line-overline">Bsp:</span></p>
 </div>
@@ -1152,8 +1377,8 @@ Asciidoc Callout
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">return</span> Response
-    .status(Resonse, Status, Ok) <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="k">return</span> <span class="nc">Response</span>
+    <span class="o">.</span><span class="na">status</span><span class="o">(</span><span class="nc">Resonse</span><span class="o">,</span> <span class="nc">Status</span><span class="o">,</span> <span class="nc">Ok</span><span class="o">)</span> <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1178,7 +1403,7 @@ source von den Herr Prof kopieren
 </div>
 </div>
 <div class="sect3">
-<h4 id="_admotions">7.1.4. Admotions</h4>
+<h4 id="_admotions"><a class="anchor" href="#_admotions"></a>7.1.4. Admotions</h4>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1205,7 +1430,7 @@ Damit Sie gut googln können
 </div>
 </div>
 <div class="sect3">
-<h4 id="_kapitel_3_3_zustandsmaschinen">7.1.5. kapitel 3 3 Zustandsmaschinen</h4>
+<h4 id="_kapitel_3_3_zustandsmaschinen"><a class="anchor" href="#_kapitel_3_3_zustandsmaschinen"></a>7.1.5. kapitel 3 3 Zustandsmaschinen</h4>
 <div class="paragraph">
 <p>Thermostat = Temperatureinstellung</p>
 </div>
@@ -1272,7 +1497,7 @@ Folien SS noch reinladen
 </div>
 </div>
 <div class="sect3">
-<h4 id="_arten_von_mengen">7.1.6. Arten von Mengen</h4>
+<h4 id="_arten_von_mengen"><a class="anchor" href="#_arten_von_mengen"></a>7.1.6. Arten von Mengen</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/disjoint.png" alt="disjoint">
@@ -1298,14 +1523,14 @@ Nächstes Mal Aktivitätsdiagramm
 </div>
 </div>
 <div class="sect1">
-<h2 id="_25_01_2022">8. 25.01.2022</h2>
+<h2 id="_25_01_2022"><a class="anchor" href="#_25_01_2022"></a>8. 25.01.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_wiederholung">8.1. Wiederholung</h3>
+<h3 id="_wiederholung"><a class="anchor" href="#_wiederholung"></a>8.1. Wiederholung</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_übung">8.2. Übung</h3>
+<h3 id="_übung"><a class="anchor" href="#_übung"></a>8.2. Übung</h3>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1325,16 +1550,16 @@ KebabCase verwenden und immer kleinschreiben
 </div>
 </div>
 <div class="sect1">
-<h2 id="_27_01_2022">9. 27.01.2022</h2>
+<h2 id="_27_01_2022"><a class="anchor" href="#_27_01_2022"></a>9. 27.01.2022</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_01_02_2022">10. 01.02.2022</h2>
+<h2 id="_01_02_2022"><a class="anchor" href="#_01_02_2022"></a>10. 01.02.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_branchen_und_merge">10.1. Branchen und Merge</h3>
+<h3 id="_branchen_und_merge"><a class="anchor" href="#_branchen_und_merge"></a>10.1. Branchen und Merge</h3>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1362,13 +1587,13 @@ Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Branch arbeit
 <div class="listingblock">
 <div class="title">Merge Branches zu Main Branch</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">  911  git merge feature/student
+<pre class="rouge highlight"><code data-lang="shell">  911  git merge feature/student
   912  git push
-  913  git branch -d feature/student
+  913  git branch <span class="nt">-d</span> feature/student
   914  git push
   915  git pull
-  916  git add .
-  917  git commit -m &quot;teacher.java updated&quot;
+  916  git add <span class="nb">.</span>
+  917  git commit <span class="nt">-m</span> <span class="s2">"teacher.java updated"</span>
   918  git push</code></pre>
 </div>
 </div>
@@ -1376,7 +1601,7 @@ Einen Branch für jede Tätigkeit und nicht 3 Jahre lang auf einen Branch arbeit
 </div>
 </div>
 <div class="sect1">
-<h2 id="_03_02_2022">11. 03.02.2022</h2>
+<h2 id="_03_02_2022"><a class="anchor" href="#_03_02_2022"></a>11. 03.02.2022</h2>
 <div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
@@ -1415,7 +1640,7 @@ Nie ITP-Dateien in Windows öffnen
 </table>
 </div>
 <div class="sect2">
-<h3 id="_anwendungsfall_diagramm">11.1. Anwendungsfall-Diagramm</h3>
+<h3 id="_anwendungsfall_diagramm"><a class="anchor" href="#_anwendungsfall_diagramm"></a>11.1. Anwendungsfall-Diagramm</h3>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -1457,7 +1682,7 @@ Der Ramen ist der Systemrahmen alles innerhalb ist programmieren außerhalb was 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tennisplatz_hausübung">11.2. Tennisplatz Hausübung</h3>
+<h3 id="_tennisplatz_hausübung"><a class="anchor" href="#_tennisplatz_hausübung"></a>11.2. Tennisplatz Hausübung</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/tennis.png" alt="tennis" width="206" height="475">
@@ -1467,102 +1692,102 @@ Der Ramen ist der Systemrahmen alles innerhalb ist programmieren außerhalb was 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_08_02_2022">12. 08.02.2022</h2>
+<h2 id="_08_02_2022"><a class="anchor" href="#_08_02_2022"></a>12. 08.02.2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Weiter Gearbeitet an der Übung an den Repository (06-git-lab-school-reiter-spindler).</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Main</span> {
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">void</span> main(<span style="color:#0a8;font-weight:bold">String</span><span style="color:#339;font-weight:bold">[]</span> args) {
-        Person student1 = <span style="color:#080;font-weight:bold">new</span> Student(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Frau</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Susi</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sonne</span><span style="color:#710">&quot;</span></span>);
-        Person teacher1 = <span style="color:#080;font-weight:bold">new</span> Teacher(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Herr</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Max</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Mustermann</span><span style="color:#710">&quot;</span></span>);
-        Person student2 = <span style="color:#080;font-weight:bold">new</span> Student(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Herr</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Felix</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Sonnenstein</span><span style="color:#710">&quot;</span></span>);
-        Person teacher2 = <span style="color:#080;font-weight:bold">new</span> Teacher(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Frau</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Margit</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Musterfrau</span><span style="color:#710">&quot;</span></span>);
-    }
-}
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Person</span> <span class="n">student1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Student</span><span class="o">(</span><span class="s">"Frau"</span><span class="o">,</span> <span class="s">"Susi"</span><span class="o">,</span> <span class="s">"Sonne"</span><span class="o">);</span>
+        <span class="nc">Person</span> <span class="n">teacher1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Teacher</span><span class="o">(</span><span class="s">"Herr"</span><span class="o">,</span> <span class="s">"Max"</span><span class="o">,</span> <span class="s">"Mustermann"</span><span class="o">);</span>
+        <span class="nc">Person</span> <span class="n">student2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Student</span><span class="o">(</span><span class="s">"Herr"</span><span class="o">,</span> <span class="s">"Felix"</span><span class="o">,</span> <span class="s">"Sonnenstein"</span><span class="o">);</span>
+        <span class="nc">Person</span> <span class="n">teacher2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Teacher</span><span class="o">(</span><span class="s">"Frau"</span><span class="o">,</span> <span class="s">"Margit"</span><span class="o">,</span> <span class="s">"Musterfrau"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<span style="color:#088;font-weight:bold">public</span> <span style="color:#088;font-weight:bold">abstract</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span> {
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#0a8;font-weight:bold">String</span> anrede;
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#0a8;font-weight:bold">String</span> firstname;
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#0a8;font-weight:bold">String</span> lastName;
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">anrede</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">firstname</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">lastName</span><span class="o">;</span>
 
-    <span style="color:#088;font-weight:bold">public</span> Person(<span style="color:#0a8;font-weight:bold">String</span> anrede, <span style="color:#0a8;font-weight:bold">String</span> firstname, <span style="color:#0a8;font-weight:bold">String</span> lastName) {
-        <span style="color:#950">this</span>.anrede = anrede;
-        <span style="color:#950">this</span>.firstname = firstname;
-        <span style="color:#950">this</span>.lastName = lastName;
-    }
+    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">anrede</span><span class="o">,</span> <span class="nc">String</span> <span class="n">firstname</span><span class="o">,</span> <span class="nc">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">anrede</span> <span class="o">=</span> <span class="n">anrede</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">firstname</span> <span class="o">=</span> <span class="n">firstname</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#0a8;font-weight:bold">String</span> getFirstname() {
-        <span style="color:#080;font-weight:bold">return</span> firstname;
-    }
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getFirstname</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">firstname</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setFirstname(<span style="color:#0a8;font-weight:bold">String</span> firstname) {
-        <span style="color:#950">this</span>.firstname = firstname;
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFirstname</span><span class="o">(</span><span class="nc">String</span> <span class="n">firstname</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">firstname</span> <span class="o">=</span> <span class="n">firstname</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#0a8;font-weight:bold">String</span> getLastName() {
-        <span style="color:#080;font-weight:bold">return</span> lastName;
-    }
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getLastName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">lastName</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setLastName(<span style="color:#0a8;font-weight:bold">String</span> lastName) {
-        <span style="color:#950">this</span>.lastName = lastName;
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLastName</span><span class="o">(</span><span class="nc">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">lastName</span> <span class="o">=</span> <span class="n">lastName</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#0a8;font-weight:bold">String</span> getAnrede() {<span style="color:#080;font-weight:bold">return</span> anrede;}
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getAnrede</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="n">anrede</span><span class="o">;}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setAnrede(<span style="color:#0a8;font-weight:bold">String</span> anrede) {<span style="color:#950">this</span>.anrede = anrede;}
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAnrede</span><span class="o">(</span><span class="nc">String</span> <span class="n">anrede</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">anrede</span> <span class="o">=</span> <span class="n">anrede</span><span class="o">;}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#088;font-weight:bold">abstract</span> <span style="color:#0a8;font-weight:bold">String</span> greeting();
-}
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="nc">String</span> <span class="nf">greeting</span><span class="o">();</span>
+<span class="o">}</span>
 
 
-<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Teacher</span> <span style="color:#088;font-weight:bold">extends</span> Person {
-    <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">int</span> teacherNumber = <span style="color:#00D">0</span>;
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Teacher</span> <span class="kd">extends</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">teacherNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-    <span style="color:#088;font-weight:bold">public</span> Teacher(<span style="color:#0a8;font-weight:bold">String</span> anrede, <span style="color:#0a8;font-weight:bold">String</span> firstname, <span style="color:#0a8;font-weight:bold">String</span> lastName) {
-        <span style="color:#950">super</span>(anrede, firstname, lastName);
-        <span style="color:#950">this</span>.teacherNumber ++;
-    }
+    <span class="kd">public</span> <span class="nf">Teacher</span><span class="o">(</span><span class="nc">String</span> <span class="n">anrede</span><span class="o">,</span> <span class="nc">String</span> <span class="n">firstname</span><span class="o">,</span> <span class="nc">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">anrede</span><span class="o">,</span> <span class="n">firstname</span><span class="o">,</span> <span class="n">lastName</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">teacherNumber</span> <span class="o">++;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">int</span> getTeacherNumber() {
-        <span style="color:#080;font-weight:bold">return</span> teacherNumber;
-    }
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getTeacherNumber</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">teacherNumber</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setTeacherNumber(<span style="color:#339;font-weight:bold">int</span> teacherNumber) {
-        <span style="color:#950">this</span>.teacherNumber = teacherNumber;
-    }
-}
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTeacherNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">teacherNumber</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">teacherNumber</span> <span class="o">=</span> <span class="n">teacherNumber</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Student</span> <span style="color:#088;font-weight:bold">extends</span> Person{
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">int</span> matNr = <span style="color:#00D">0</span>;
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="kd">extends</span> <span class="nc">Person</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">matNr</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-    <span style="color:#088;font-weight:bold">public</span> Student(<span style="color:#0a8;font-weight:bold">String</span> anrede, <span style="color:#0a8;font-weight:bold">String</span> firstname, <span style="color:#0a8;font-weight:bold">String</span> lastName) {
-        <span style="color:#950">super</span>(anrede, firstname, lastName);
-        <span style="color:#950">this</span>.matNr ++;
-    }
+    <span class="kd">public</span> <span class="nf">Student</span><span class="o">(</span><span class="nc">String</span> <span class="n">anrede</span><span class="o">,</span> <span class="nc">String</span> <span class="n">firstname</span><span class="o">,</span> <span class="nc">String</span> <span class="n">lastName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">anrede</span><span class="o">,</span> <span class="n">firstname</span><span class="o">,</span> <span class="n">lastName</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">matNr</span> <span class="o">++;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#339;font-weight:bold">int</span> getMatNr() {
-        <span style="color:#080;font-weight:bold">return</span> matNr;
-    }
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="nf">getMatNr</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">matNr</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#339;font-weight:bold">void</span> setMatNr(<span style="color:#339;font-weight:bold">int</span> matNr) {
-        <span style="color:#950">this</span>.matNr = matNr;
-    }
-}</code></pre>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setMatNr</span><span class="o">(</span><span class="kt">int</span> <span class="n">matNr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">matNr</span> <span class="o">=</span> <span class="n">matNr</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_01_03_2022">13. 01.03.2022</h2>
+<h2 id="_01_03_2022"><a class="anchor" href="#_01_03_2022"></a>13. 01.03.2022</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_03_03_2022">14. 03.03.2022</h2>
+<h2 id="_03_03_2022"><a class="anchor" href="#_03_03_2022"></a>14. 03.03.2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/create-oravm.html" class="bare">https://htl-leonding-college.github.io/quarkus-jar-gh-actions-demo/create-oravm.html</a></p>
@@ -1603,9 +1828,9 @@ Filezilla lernen
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">cd /opt
-cd /docker
-cd /nginx
+<pre class="rouge highlight"><code data-lang="bash"><span class="nb">cd</span> /opt
+<span class="nb">cd</span> /docker
+<span class="nb">cd</span> /nginx
 Skript</code></pre>
 </div>
 </div>
@@ -1614,10 +1839,10 @@ Skript</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">mkdir docker
-cd docker
-mkdir nginx
-cd nginx</code></pre>
+<pre class="rouge highlight"><code data-lang="bash"><span class="nb">mkdir </span>docker
+<span class="nb">cd </span>docker
+<span class="nb">mkdir </span>nginx
+<span class="nb">cd </span>nginx</code></pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -1633,7 +1858,7 @@ Nur offizielle Image verwenden
 </table>
 </div>
 <div class="sect2">
-<h3 id="_was_ist_ein_docker_image">14.1. Was ist ein Docker Image</h3>
+<h3 id="_was_ist_ein_docker_image"><a class="anchor" href="#_was_ist_ein_docker_image"></a>14.1. Was ist ein Docker Image</h3>
 <div class="paragraph">
 <p>Kann man sich vorstellen wie eine ISO Image</p>
 </div>
@@ -1654,22 +1879,22 @@ Nur offizielle Image verwenden
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">chmod +x start-nginx.sh
+<pre class="rouge highlight"><code data-lang="bash"><span class="nb">chmod</span> +x start-nginx.sh
 ./start-nginx.sh
-docker image ls
-docker container ls
-docker container stop my-nginx
-docker container ls -a
+docker image <span class="nb">ls
+</span>docker container <span class="nb">ls
+</span>docker container stop my-nginx
+docker container <span class="nb">ls</span> <span class="nt">-a</span>
 docker container start my-nginx
-sudo apt install lynx
-docker kill b7b
-docker container ls -a
-docker container rm b7b
-docker container ls -a
-sudo apt install tree
+<span class="nb">sudo </span>apt <span class="nb">install </span>lynx
+docker <span class="nb">kill </span>b7b
+docker container <span class="nb">ls</span> <span class="nt">-a</span>
+docker container <span class="nb">rm </span>b7b
+docker container <span class="nb">ls</span> <span class="nt">-a</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>tree
 tree
 curl localhost_80
-docker exec -it my-nginx /bin/bash</code></pre>
+docker <span class="nb">exec</span> <span class="nt">-it</span> my-nginx /bin/bash</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1700,7 +1925,7 @@ sudo !! letzten Befehl als sudo ausführen
 </div>
 </div>
 <div class="sect1">
-<h2 id="_08_03_2022">15. 08.03.2022</h2>
+<h2 id="_08_03_2022"><a class="anchor" href="#_08_03_2022"></a>15. 08.03.2022</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -1710,13 +1935,13 @@ sudo !! letzten Befehl als sudo ausführen
 <div class="listingblock">
 <div class="title">Docker Start Comand</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">docker run -e POSTGRES_PASSWORD=password --name my-database  -p 5432:5432 -v database-volume:/var/lib/postgresql/data  my-database</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">docker run <span class="nt">-e</span> <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>password <span class="nt">--name</span> my-database  <span class="nt">-p</span> 5432:5432 <span class="nt">-v</span> database-volume:/var/lib/postgresql/data  my-database</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_17_03_2022">16. 17.03.2022</h2>
+<h2 id="_17_03_2022"><a class="anchor" href="#_17_03_2022"></a>16. 17.03.2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Projekte besprechen</p>
@@ -1750,13 +1975,13 @@ sudo !! letzten Befehl als sudo ausführen
 </div>
 </div>
 <div class="sect1">
-<h2 id="_22_03_2022">17. 22.03.2022</h2>
+<h2 id="_22_03_2022"><a class="anchor" href="#_22_03_2022"></a>17. 22.03.2022</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_24_03_2022">18. 24.03.2022</h2>
+<h2 id="_24_03_2022"><a class="anchor" href="#_24_03_2022"></a>18. 24.03.2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/2122-3bhitm-itp/02-project-inventory" class="bare">https://github.com/2122-3bhitm-itp/02-project-inventory</a></p>
@@ -1767,10 +1992,10 @@ sudo !! letzten Befehl als sudo ausführen
 </div>
 </div>
 <div class="sect1">
-<h2 id="_31_03_2022">19. 31.03.2022</h2>
+<h2 id="_31_03_2022"><a class="anchor" href="#_31_03_2022"></a>19. 31.03.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_leistungsfestellung_21_04_2022">19.1. Leistungsfestellung 21.04.2022</h3>
+<h3 id="_leistungsfestellung_21_04_2022"><a class="anchor" href="#_leistungsfestellung_21_04_2022"></a>19.1. Leistungsfestellung 21.04.2022</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1795,7 +2020,7 @@ sudo !! letzten Befehl als sudo ausführen
 </div>
 </div>
 <div class="sect2">
-<h3 id="_projektbesprechung">19.2. Projektbesprechung</h3>
+<h3 id="_projektbesprechung"><a class="anchor" href="#_projektbesprechung"></a>19.2. Projektbesprechung</h3>
 <div class="paragraph">
 <p>PlantUML &#8594; Layout</p>
 </div>
@@ -1812,7 +2037,7 @@ immer-klein-und-so-schreiben &#8594; Files
 </table>
 </div>
 <div class="sect3">
-<h4 id="_datenmodell_projekt_quiz">19.2.1. Datenmodell - Projekt - Quiz:</h4>
+<h4 id="_datenmodell_projekt_quiz"><a class="anchor" href="#_datenmodell_projekt_quiz"></a>19.2.1. Datenmodell - Projekt - Quiz:</h4>
 <div class="paragraph">
 <p>Herr Prof Repo gecloned
 Link in Read.me
@@ -1874,7 +2099,7 @@ Sprechende Variablen
 </div>
 </div>
 <div class="sect2">
-<h3 id="_nächste_schritte_im_projekt">19.3. Nächste Schritte im Projekt</h3>
+<h3 id="_nächste_schritte_im_projekt"><a class="anchor" href="#_nächste_schritte_im_projekt"></a>19.3. Nächste Schritte im Projekt</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1902,16 +2127,16 @@ Sprechende Variablen
 </div>
 </div>
 <div class="sect1">
-<h2 id="_26_04_2022">20. 26.04.2022</h2>
+<h2 id="_26_04_2022"><a class="anchor" href="#_26_04_2022"></a>20. 26.04.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_cloud_computing">20.1. Cloud Computing</h3>
+<h3 id="_cloud_computing"><a class="anchor" href="#_cloud_computing"></a>20.1. Cloud Computing</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_28_04_2022">21. 28.04.2022</h2>
+<h2 id="_28_04_2022"><a class="anchor" href="#_28_04_2022"></a>21. 28.04.2022</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1951,9 +2176,9 @@ Bleistift und Radiergummi immer mithaben
 </table>
 </div>
 <div class="sect2">
-<h3 id="_musterlösung_test">21.1. Musterlösung Test</h3>
+<h3 id="_musterlösung_test"><a class="anchor" href="#_musterlösung_test"></a>21.1. Musterlösung Test</h3>
 <div class="sect3">
-<h4 id="_klassendiagramm">21.1.1. Klassendiagramm</h4>
+<h4 id="_klassendiagramm"><a class="anchor" href="#_klassendiagramm"></a>21.1.1. Klassendiagramm</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/chaterfluggesellschaft.png" alt="chaterfluggesellschaft" width="644" height="289">
@@ -1973,7 +2198,7 @@ Struktur ist wichtig
 </div>
 </div>
 <div class="sect3">
-<h4 id="_kurzfragen">21.1.2. Kurzfragen</h4>
+<h4 id="_kurzfragen"><a class="anchor" href="#_kurzfragen"></a>21.1.2. Kurzfragen</h4>
 <div class="paragraph">
 <p>a) Bind mount</p>
 </div>
@@ -2004,9 +2229,9 @@ Keine Märchen schreiben
 </div>
 </div>
 <div class="sect2">
-<h3 id="_vorgehensmodell">21.2. Vorgehensmodell</h3>
+<h3 id="_vorgehensmodell"><a class="anchor" href="#_vorgehensmodell"></a>21.2. Vorgehensmodell</h3>
 <div class="sect3">
-<h4 id="_wasserfallmodell">21.2.1. Wasserfallmodell</h4>
+<h4 id="_wasserfallmodell"><a class="anchor" href="#_wasserfallmodell"></a>21.2.1. Wasserfallmodell</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/wasserfallmodell.png" alt="wasserfallmodell">
@@ -2021,7 +2246,7 @@ Keine Märchen schreiben
 </div>
 </div>
 <div class="sect3">
-<h4 id="_v_modell">21.2.2. V-Modell</h4>
+<h4 id="_v_modell"><a class="anchor" href="#_v_modell"></a>21.2.2. V-Modell</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/vmodell.png" alt="vmodell">
@@ -2029,7 +2254,7 @@ Keine Märchen schreiben
 </div>
 </div>
 <div class="sect3">
-<h4 id="_scrum">21.2.3. Scrum</h4>
+<h4 id="_scrum"><a class="anchor" href="#_scrum"></a>21.2.3. Scrum</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2065,23 +2290,23 @@ Keine Märchen schreiben
 </div>
 </div>
 <div class="sect1">
-<h2 id="_03_05_2022">22. 03.05.2022</h2>
+<h2 id="_03_05_2022"><a class="anchor" href="#_03_05_2022"></a>22. 03.05.2022</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">mkdir docker-java-tutorial
-cd docker-java-tutorial/
-mkdir app
-cd app
+<pre class="rouge highlight"><code data-lang="bash"><span class="nb">mkdir </span>docker-java-tutorial
+<span class="nb">cd </span>docker-java-tutorial/
+<span class="nb">mkdir </span>app
+<span class="nb">cd </span>app
 nano Dockerfile</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM eclipse-temurin:17
-RUN mkdir /opt/app
-COPY japp.jar /opt/app
-CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/opt/app/japp.jar&quot;]</code></pre>
+<pre class="rouge highlight"><code data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> eclipse-temurin:17</span>
+<span class="k">RUN </span><span class="nb">mkdir</span> /opt/app
+<span class="k">COPY</span><span class="s"> japp.jar /opt/app</span>
+<span class="k">CMD</span><span class="s"> ["java", "-jar", "/opt/app/japp.jar"]</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2090,46 +2315,46 @@ CMD [&quot;java&quot;, &quot;-jar&quot;, &quot;/opt/app/japp.jar&quot;]</code></
 <div class="listingblock">
 <div class="title">Main Class</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">at.htl</span>;
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">at.htl</span><span class="o">;</span>
 
-<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.quarkus.runtime.Quarkus</span>;
-<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.quarkus.runtime.annotations.QuarkusMain</span>;
+<span class="kn">import</span> <span class="nn">io.quarkus.runtime.Quarkus</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">io.quarkus.runtime.annotations.QuarkusMain</span><span class="o">;</span>
 
-<span style="color:#007">@QuarkusMain</span>
+<span class="nd">@QuarkusMain</span>
 
-<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">TheMain</span> {
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">void</span> main(<span style="color:#0a8;font-weight:bold">String</span><span style="color:#339;font-weight:bold">[]</span> args) {
-        Quarkus.run(args);
-    }
-}</code></pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TheMain</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Quarkus</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">application.properties</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="qute">quarkus.package.type=uber-jar</code></pre>
+<pre class="rouge highlight"><code data-lang="qute">quarkus.package.type=uber-jar</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">dockerignore</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="docker">#*
-#!target/*-runner
-#!target/*-runner.jar
+<pre class="rouge highlight"><code data-lang="docker"><span class="c">#*</span>
+<span class="c">#!target/*-runner</span>
+<span class="c">#!target/*-runner.jar</span>
 !target/lib/*
 !target/quarkus-app/*</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">./mvnw clean package
+<pre class="rouge highlight"><code data-lang="bash">./mvnw clean package
 docker build .</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lernen_für_den_test">23. Lernen für den Test</h2>
+<h2 id="_lernen_für_den_test"><a class="anchor" href="#_lernen_für_den_test"></a>23. Lernen für den Test</h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -2144,12 +2369,12 @@ docker build .</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_05_05_2022">24. 05.05.2022</h2>
+<h2 id="_05_05_2022"><a class="anchor" href="#_05_05_2022"></a>24. 05.05.2022</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_test_lösung">24.1. Test Lösung</h3>
+<h3 id="_test_lösung"><a class="anchor" href="#_test_lösung"></a>24.1. Test Lösung</h3>
 <div class="sect3">
-<h4 id="_cld">24.1.1. Cld</h4>
+<h4 id="_cld"><a class="anchor" href="#_cld"></a>24.1.1. Cld</h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/cld-rechnungen-test.png" alt="cld rechnungen test" width="928" height="269">
@@ -2219,46 +2444,46 @@ Klassifizieren, zu einer Klasse zusammenfassen - mit einem Begriff zusammenfasse
 </div>
 </div>
 <div class="sect1">
-<h2 id="_10_05_2022">25. 10.05.2022</h2>
+<h2 id="_10_05_2022"><a class="anchor" href="#_10_05_2022"></a>25. 10.05.2022</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">docker rmi $(docker images -a -q)</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">docker rmi <span class="si">$(</span>docker images <span class="nt">-a</span> <span class="nt">-q</span><span class="si">)</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_übung_2">26. Übung</h2>
+<h2 id="_übung_2"><a class="anchor" href="#_übung_2"></a>26. Übung</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM ubuntu
+<pre class="rouge highlight"><code data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> ubuntu</span>
 
-RUN echo hello 3bhitm &gt;&gt; test.txt</code></pre>
+<span class="k">RUN </span><span class="nb">echo </span>hello 3bhitm <span class="o">&gt;&gt;</span> test.txt</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">docker build -t my-ubunto .</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">docker build <span class="nt">-t</span> my-ubunto .</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM my-ubunto
+<pre class="rouge highlight"><code data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> my-ubunto</span>
 
-RUN cat test.txt</code></pre>
+<span class="k">RUN </span><span class="nb">cat </span>test.txt</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">docker build -t cat .</code></pre>
+<pre class="rouge highlight"><code data-lang="bash">docker build <span class="nt">-t</span> <span class="nb">cat</span> .</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_12_05_2022">27. 12.05.2022</h2>
+<h2 id="_12_05_2022"><a class="anchor" href="#_12_05_2022"></a>27. 12.05.2022</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spezifikation = Genaue Technische Beschreibung</p>
@@ -2302,7 +2527,7 @@ RUN cat test.txt</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-05-12 11:21:48 +0200
+Last updated 2022-05-12 09:21:48 UTC
 </div>
 </div>
 </body>
