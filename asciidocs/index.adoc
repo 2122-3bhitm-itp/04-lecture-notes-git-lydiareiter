@@ -1060,7 +1060,7 @@ RUN echo hello 3bhitm >> test.txt
 
 [source, bash]
 -----
-build -t my-ubunto .
+docker build -t my-ubunto .
 -----
 
 [source, Dockerfile]
@@ -1073,5 +1073,32 @@ RUN cat test.txt
 
 [source, bash]
 -----
-build -t cat .
+docker build -t cat .
 -----
+
+== 12.05.2022
+
+Spezifikation = Genaue Technische Beschreibung
+
+vürokratisches System = Abeitlungsleiter - Gruppenleiuter -...
+
+bürokratische Prozesse = von oben nach untern von bürokratischen System
+
+wöhlfülen ist wichtiger als das bürokratisches System
+
+Funktionierende Sogtware ist wichtiger als komplette Doku
+
+Produkt Backlog ist wie Pflichtenheft
+
+Sprit Backlog -> sind mehrere User Stories
+
+User Story -> Als irgendwer möchte ich etwas, so dass ich bla bla bla
+
+Rollen Scrum -> Scrum Master (Stütz) Stackholder (Betroffene)
+
+Scheingenauigkeit ist nicht gut
+
+usage -> ... new Class
+
+usage != Assotiation
+
