@@ -1103,3 +1103,56 @@ usage -> ... new Class
 usage != Assotiation
 
 == 17.05.2022
+
+== 19. 05. 2022
+
+=== Test
+
+=== CLD
+
+* Diagramm Show Diagramm
+* unteres
+* Show Dependencies
+* Rechte Moustache Netz Organic
+
+
+=== Erwartung Projekte
+
+(Ergebnisprotokoll)
+
+* Datenmodell muss implementiert und dokumentiert
+* ph-pages
+* Implementierung
+** sql-files vorhanden
+*** sql-create files
+*** sql-drop files
+*** sql-insert files
+** Java Zugriffsschicht
+*** SqlRunner und SqlScript
+*** Repositories Zugriff auf Tabellen
+* User Stories
+
+=== Repository Pattern
+
+.Repository Pattern (https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)
+image::microsoft-repo-pattern.png[]
+
+Domain = Fachbereich (allgemein Bereich) -> Was ich in der Datenbank speichern möchte
+
+Technische Klasse -> Damit technisches System funktioniert
+
+Daten -> Zustand (Klassenattribute)
+
+Behavior -> Methoden
+
+Aggregation -> Zusammenfassen (count, avg -> Table)
+
+Schwach Entitäten -> abhängig anderen Entity
+
+DAO - grad
+
+LUW (Logical Unit of Work)
+
+Transaktion komplett durchgeführt oder gar nicht
+
+TIP: Nächste Woche Figma und Github Actions
