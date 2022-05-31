@@ -1156,3 +1156,27 @@ LUW (Logical Unit of Work)
 Transaktion komplett durchgeführt oder gar nicht
 
 TIP: Nächste Woche Figma und Github Actions
+
+== 24.05.2022
+
+== 31.05.2022
+
+=== Streams
+
+.Erklärung für Streams
+https://rxmarbles.com/
+
+==== Skip
+
+image::rxmarbles-skip.png[]
+
+==== Map
+
+.Aus einer Kugel eine andere Kugel
+image::rxmarbles-map.png[]
+
+Map ist eine pure Funktion. Eingang und ausgang.
+
+IMPORTANT: Bild von Producer Map Consumer
+
+TIP: Map = zuordnen
