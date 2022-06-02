@@ -1180,3 +1180,8 @@ Map ist eine pure Funktion. Eingang und ausgang.
 IMPORTANT: Bild von Producer Map Consumer
 
 TIP: Map = zuordnen
+
+== 02.06.2022
+
+Mengengerüst
+
